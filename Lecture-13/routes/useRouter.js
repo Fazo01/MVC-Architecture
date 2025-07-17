@@ -2,8 +2,6 @@ const path=require('path')
 const express=require('express')
 const useRouter=express.Router()
 const { registeredHomes}=require('./Hostrouter')//ejs
-useRouter.get("/",(req,res,next)=>{
-  console.log(registeredHomes)
-  res.render('home',{registeredHomes:registeredHomes , pageTitle:'airbnb home',currentPage:'Home'})//Important to change in partial
-})
+const Homecontroller=require("../controllers/home.js")//mvc
+useRouter.get("/",Homecontroller.gethome)
 module.exports=useRouter

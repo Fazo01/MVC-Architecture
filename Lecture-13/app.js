@@ -1,5 +1,5 @@
 const path=require('path')
-
+const Homecontroller =require('./controllers/error')
 const rootDir=require('./utils/pathutils')
 const express=require('express')
 const app=express()
@@ -20,9 +20,8 @@ app.use(userRouter)//Export Router
 app.use("/host",hostrouter)//Export Router /host for overall path sharing
 app.use(express.static(path.join(rootDir,'public')))//To access css file
 
-app.use((req,res,next)=>{
-  res.status(404).render('page_404',{pageTitle:'404',currentPage:'404'})//Important to change in partial
-})
+app.use(Homecontroller.page404)
+
 const PORT=3002
 app.listen(PORT,()=>{
   console.log(`Server is running on port http://localhost:${PORT}`)
