@@ -16,13 +16,14 @@ exports.gethomeadd = (req, res, next) => {
 
   res.render("homeadd", { pageTitle: "Home Add", currentPage: "HomeAdded" }); //Important to change in partial
 };
-exports.gethome = (req, res, next) => {
-  const registeredHomes=Home.fetchAll()//Adding module
+exports.gethome = (req, res, next) => {//Adding module
+  Home.fetchAll((registeredHomes)=>
+    res.render("home", {
+      registeredHomes: registeredHomes,
+      pageTitle: "airbnb home",
+      currentPage: "Home",
+    }) //Important to change in partial
+  );
 
-  res.render("home", {
-    registeredHomes: registeredHomes,
-    pageTitle: "airbnb home",
-    currentPage: "Home",
-  }); //Important to change in partial
 };
 exports.registeredHomes = registeredHomes;
