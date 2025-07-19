@@ -9,7 +9,7 @@ app.set('views', path.join(rootDir, 'views')); // Correct key is 'views' new ver
 
 
 const storeRouter=require('./routes/storeRouter')//Export Router
-const {hostrouter}=require('./routes/Hostrouter')//Export Router
+const hostrouter=require('./routes/Hostrouter')//Export Router
 app.use((req,res,next)=>{
   console.log(req.url,req.method)
   next()

@@ -1,7 +1,10 @@
-const path=require('path')
+
 const express=require('express')
 const storeRouter=express.Router()
-const { registeredHomes}=require('./Hostrouter.js')//ejs
-const Homecontroller=require("../controllers/home.js")//mvc
+
+const Homecontroller=require("../controllers/storeController")//mvc
+
 storeRouter.get("/",Homecontroller.gethome)
+storeRouter.get("/bookings",Homecontroller.getBookings)
+
 module.exports=storeRouter

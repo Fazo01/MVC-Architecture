@@ -16,14 +16,7 @@ exports.gethomeadd = (req, res, next) => {
 
   res.render("host/home-added", { pageTitle: "Home Add", currentPage: "HomeAdded" }); //Important to change in partial
 };
-exports.gethome = (req, res, next) => {//Adding module
-  Home.fetchAll((registeredHomes)=>
-    res.render("store/home-list", {
-      registeredHomes: registeredHomes,
-      pageTitle: "airbnb home",
-      currentPage: "Home",
-    }) //Important to change in partial
-  );
 
-};
+
+
 exports.registeredHomes = registeredHomes;

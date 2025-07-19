@@ -2,10 +2,10 @@
 const express = require("express");
 // const rootDir = require("../utils/pathutils");
 const hostrouter = express.Router();
-const Homecontroller=require("../controllers/home.js")//mvc
-hostrouter.get("/add-home",Homecontroller.getAddhome)//mvc
+const hostController=require("../controllers/hostController.js")//mvc
+hostrouter.get("/add-home",hostController.getAddhome)//mvc
 //to store input data
 // const registeredHomes = [];
-hostrouter.post("/add-home", Homecontroller.gethomeadd)
+hostrouter.post("/add-home", hostController.gethomeadd)
 
-exports.hostrouter = hostrouter;
+module.exports = hostrouter;
