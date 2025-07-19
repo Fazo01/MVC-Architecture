@@ -10,7 +10,6 @@ exports.gethomeadd=((req, res, next) => {
 });
 exports.gethome=((req,res,next)=>{
   console.log(registeredHomes)
-  res.render('home',{registeredHomes:registeredHomes , pageTitle:'airbnb home',currentPage:'Home'})//Important to change in partial
+  res.render("home",{registeredHomes:registeredHomes , pageTitle:'airbnb home',currentPage:'Home'})//Important to change in partial
 })
-
-exports.hostrouter = hostrouter;
+exports.registeredHomes = registeredHomes;
