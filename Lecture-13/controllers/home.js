@@ -5,7 +5,7 @@ exports.getAddhome = (req, res, next) => {
   //mvc
 
 
-  res.render("addHome", { pageTitle: "Add Home", currentPage: "addHome" }); //Important to change in partial
+  res.render("host/addHome", { pageTitle: "Add Home", currentPage: "addHome" }); //Important to change in partial
 };
 exports.gethomeadd = (req, res, next) => {
   console.log(req.body); //parcel
@@ -14,11 +14,11 @@ exports.gethomeadd = (req, res, next) => {
   const home = new Home(houseName,price,location,rating,photoURL); //Adding Module
   home.save()
 
-  res.render("homeadd", { pageTitle: "Home Add", currentPage: "HomeAdded" }); //Important to change in partial
+  res.render("host/home-added", { pageTitle: "Home Add", currentPage: "HomeAdded" }); //Important to change in partial
 };
 exports.gethome = (req, res, next) => {//Adding module
   Home.fetchAll((registeredHomes)=>
-    res.render("home", {
+    res.render("store/home-list", {
       registeredHomes: registeredHomes,
       pageTitle: "airbnb home",
       currentPage: "Home",

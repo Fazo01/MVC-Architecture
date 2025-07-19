@@ -8,7 +8,7 @@ app.set('view engine', 'ejs'); // Tells Express to use EJS templates
 app.set('views', path.join(rootDir, 'views')); // Correct key is 'views' new version key
 
 
-const userRouter=require('./routes/useRouter')//Export Router
+const storeRouter=require('./routes/storeRouter')//Export Router
 const {hostrouter}=require('./routes/Hostrouter')//Export Router
 app.use((req,res,next)=>{
   console.log(req.url,req.method)
@@ -16,7 +16,7 @@ app.use((req,res,next)=>{
 })
 
 app.use(express.urlencoded())//parcel
-app.use(userRouter)//Export Router
+app.use(storeRouter)//Export Router
 app.use("/host",hostrouter)//Export Router /host for overall path sharing
 app.use(express.static(path.join(rootDir,'public')))//To access css file
 
