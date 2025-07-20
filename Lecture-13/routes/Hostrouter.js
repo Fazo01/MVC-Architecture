@@ -7,5 +7,6 @@ hostrouter.get("/add-home",hostController.getAddhome)//mvc
 //to store input data
 // const registeredHomes = [];
 hostrouter.post("/add-home", hostController.gethomeadd)
+hostrouter.get("/host-home-list", hostController.getHostHomes)
 
 module.exports = hostrouter;
