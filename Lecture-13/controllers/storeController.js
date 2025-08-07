@@ -1,7 +1,7 @@
 const Home = require("../models/home"); //Adding Module
 
 exports.getIndex = (req, res, next) => {//Adding module
-  Home.fetchAll((registeredHomes)=>
+  Home.find((registeredHomes)=>
     res.render("store/index", {
       registeredHomes: registeredHomes,
       pageTitle: "airbnb home",
@@ -11,7 +11,7 @@ exports.getIndex = (req, res, next) => {//Adding module
 };
 
 exports.gethome = (req, res, next) => {//Adding module
-  Home.fetchAll((registeredHomes)=>
+  Home.find((registeredHomes)=>
     res.render("store/home-list", {
       registeredHomes: registeredHomes,
       pageTitle: "Homes List",
@@ -27,7 +27,7 @@ exports.getBookings=(req, res, next) => {
     })
 };
 exports.getFavouriteList=(req, res, next) => {
-    Home.fetchAll((registeredHomes)=>
+    Home.find((registeredHomes)=>
     res.render("store/favourite-list", {
       registeredHomes: registeredHomes,
       pageTitle: "Favourite List",

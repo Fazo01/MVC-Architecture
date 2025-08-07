@@ -17,7 +17,7 @@ module.exports = class Home {
   //To save Files
   save() {
     //Write File
-    Home.fetchAll((registeredHomes)=>{
+    Home.find((registeredHomes)=>{
       registeredHomes.push(this);
     const homeDataPath = path.join(rootDir,'data', 'home.json');
     fs.writeFile(homeDataPath, JSON.stringify(registeredHomes), error => {
@@ -27,7 +27,7 @@ module.exports = class Home {
   }
 
   //Read File
-  static fetchAll(callback) {
+  static find(callback) {
     const homeDataPath=path.join(rootDir,'data','home.json')
     fs.readFile(homeDataPath,(err,data)=>{
       if(!err){
