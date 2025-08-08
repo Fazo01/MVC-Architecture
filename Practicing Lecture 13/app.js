@@ -20,7 +20,7 @@ app.use(useRouter)
 app.use("/host",hostRouter)
 
 app.use((req,res,next)=>{
-  res.status(404).render('page_404',{PageTitle:"Error"})
+  res.status(404).render('page_404',{PageTitle:'404',currentPage:"404"})
 })
 
 const PORT=3000

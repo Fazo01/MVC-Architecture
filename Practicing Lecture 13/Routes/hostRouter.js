@@ -3,13 +3,13 @@ const path=require("path")
 const hostRouter=express.Router()
 const rootDir=require("../utils/utilPath")
 hostRouter.get("/add-home",(req,res,next)=>{
-  res.render('addHome',{PageTitle:"Add Home",currentPage:"Add-Home"})
+  res.render('addHome',{PageTitle:"Add Home",currentPage:"AddHome"})
 })
 const registeredHome=[]
 hostRouter.post("/add-home",(req,res,next)=>{
   // console.log(req.body)
   registeredHome.push(req.body)
-  res.render('homeadd',{PageTitle:"Home Add",currentPage:"Home-added"})
+  res.render('homeadd',{PageTitle:"Home Add",currentPage:"Homeadded"})
 })
 exports.hostRouter=hostRouter
 exports.registeredHome=registeredHome
