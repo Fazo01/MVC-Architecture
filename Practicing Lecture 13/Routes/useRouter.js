@@ -2,7 +2,8 @@ const express=require("express")
 const useRouter=express.Router()
 const path=require("path")
 const rootDir=require("../utils/utilPath")
+const { registeredHome } = require("./hostRouter")
 useRouter.get("/",(req,res,next)=>{
-  res.sendFile(path.join(rootDir,"Views","home.html"))
+  res.render('home',{registeredHome:registeredHome})
 })
 module.exports=useRouter
