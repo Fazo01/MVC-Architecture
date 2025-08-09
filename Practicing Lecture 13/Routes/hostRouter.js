@@ -2,14 +2,8 @@ const express=require("express")
 const path=require("path")
 const hostRouter=express.Router()
 const rootDir=require("../utils/utilPath")
-hostRouter.get("/add-home",(req,res,next)=>{
-  res.render('addHome',{PageTitle:"Add Home",currentPage:"AddHome"})
-})
-const registeredHome=[]
-hostRouter.post("/add-home",(req,res,next)=>{
-  // console.log(req.body)
-  registeredHome.push(req.body)
-  res.render('homeadd',{PageTitle:"Home Add",currentPage:"Homeadded"})
-})
+const homeController=require("../controllers/hostcontroller")
+hostRouter.get("/add-home",homeController.getAddhome)
+
+hostRouter.post("/add-home",homeController.postHomeadd)
 exports.hostRouter=hostRouter
-exports.registeredHome=registeredHome
