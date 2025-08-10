@@ -11,7 +11,9 @@ exports.postHomeadd=(req,res,next)=>{
   res.render('homeadd',{PageTitle:"Home Add",currentPage:"Homeadded"})
 }
 exports.getHome=(req,res,next)=>{
-  const registeredHome=Home.fetchAll()
+  Home.fetchAll((registeredHome)=>{
+    
   res.render('home',{registeredHome:registeredHome,currentPage:"Home",PageTitle:"Home"})
+  })
 }
 exports.registeredHome=registeredHome
